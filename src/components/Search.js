@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import logo from './logo.png'
 //import logo from 'https://www.pngfind.com/pngs/m/256-2562232_github-icon-png-download-github-icon-blue-png.png'
 const Search = (props) => {
     const [userName, setUserName] = useState();
@@ -16,23 +17,49 @@ const Search = (props) => {
     return (
         <>
             <Container>
-                <img src='https://image.flaticon.com/icons/png/512/25/25231.png' />
-                <input type="text" placeholder='Username...' onChange={handleUsername}/>
-                <input type="text" placeholder='Repository...' onChange={handleRepo}/>
-                <button type='submit' onClick={()=>{
-                    props.handleClickProp(userName,repoName)
-                }} >SEARCH</button>
+                <Wrapper><img src={logo} /></Wrapper>
+                <Wrapper><input style={{marginRight:'1vw'}} type="text" placeholder='Username...' onChange={handleUsername} /></Wrapper>
+                <Wrapper><input style={{ marginRight: '1vw' }} type="text" placeholder='Repository...' onChange={handleRepo} /></Wrapper>
+                <Wrapper><button type='submit' onClick={() => {
+                    props.handleClickProp(userName, repoName)
+                }} >SEARCH</button></Wrapper>
+
+
+
+
             </Container>
-            
+
         </>
     )
 }
 
-const Container=styled.div `
+const Container = styled.div`
 display:flex;
-height:6vh;
-padding:0.5rem;
+flex-wrap:wrap;
+
+height:5vh;
+padding:2vh;
 border-style:solid;
+
+
+
+`
+const Containertemp = styled.div`
+display:flex;
+flex-wrap:wrap;
+
+height:5vh;
+padding:2vh;
+border-style:solid;
+
+
+
+`
+const Wrapper = styled.div`
+
+display:flex;
+justify-content:flex-start;
+height:5vh ;
 
 `
 

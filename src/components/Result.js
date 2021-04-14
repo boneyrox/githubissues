@@ -71,8 +71,12 @@ const Cards = styled.div`
     display:flex;
     justify-content:flex-start;
     flex-direction:row;
-    border-style:solid;
+    border-style:groove;
     margin:0.1rem;
+    &:hover{
+         background: #E1E0DE;
+    transform: translateY(0);
+    }
 `
 
 const WrapperGeneral = styled.div`
